@@ -1,0 +1,27 @@
+{
+  "name": "recordshelf-back-end",
+  "version": "1.0.0",
+  "description": "Backend calls to Discogs API",
+  "main": "server.js",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^7.0.0",
+    "express": "^4.16.4",
+    "superagent": "^5.0.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CaityHeath/recordshelf-back-end.git"
+  },
+  "author": "Caity Heath",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/CaityHeath/recordshelf-back-end/issues"
+  },
+  "homepage": "https://github.com/CaityHeath/recordshelf-back-end#readme"
+}
