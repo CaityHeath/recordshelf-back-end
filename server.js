@@ -4,7 +4,12 @@ require('dotenv').config();
 const PORT = process.env.PORT;
 const express = require('express');
 const app = express();
+const cors = require('cors');
+
+
 app.listen(PORT, ()=> console.log(`listening on port ${PORT}`));
+
+
 
 const superagent = require('superagent');
 
@@ -18,6 +23,7 @@ app.get('/testing', (req, res) => {
   res.send('hiiiii');
 });
 
+app.use(cors());
 
 function createMusicSearch(request, response){
 
