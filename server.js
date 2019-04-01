@@ -21,7 +21,7 @@ app.get('/testing', (req, res) => {
 
 function createMusicSearch(request, response){
 
-  let query = request.body.results.artist;
+  let query = request.query.artist;
   let url = `https://api.discogs.com/database/search?per_page=15&artist=${query}&artist&key=${DISCOGS_API_KEY}&secret=${DISCOGS_API_SECRET}`;
   
   superagent.get(url)
@@ -29,7 +29,6 @@ function createMusicSearch(request, response){
       return new Music(result);
     }))
     .then(newMusic =>{
-      console.log(newMusic);
       return response.send(newMusic);
     })
     .catch(error => console.error(error));
@@ -40,5 +39,4 @@ function Music(data){
   this.title = data.title.replace(/^.*-/, '');
   this.image = data.cover_image;
 }
-
 
