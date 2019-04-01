@@ -13,11 +13,17 @@ const DISCOGS_API_SECRET = process.env.DISCOGS_API_SECRET;
 
 app.get('/search', createMusicSearch);
 
+
+app.get('/testing', (req, res) => {
+  res.send('hiiiii');
+});
+
+
 function createMusicSearch(request, response){
-  let query = request.body.search;
 
+  let query = request.body.results.artist;
   let url = `https://api.discogs.com/database/search?per_page=15&artist=${query}&artist&key=${DISCOGS_API_KEY}&secret=${DISCOGS_API_SECRET}`;
-
+  
   superagent.get(url)
     .then(response => response.body.results.map(result => {
       return new Music(result);
