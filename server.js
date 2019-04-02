@@ -24,6 +24,7 @@ app.get('/testing', (req, res) => {
 });
 
 app.use(cors());
+app.use(express.urlencoded({extended:true}));
 
 function createMusicSearch(request, response){
 
