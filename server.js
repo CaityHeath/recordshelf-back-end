@@ -6,9 +6,11 @@ const express = require('express');
 const app = express();
 const cors = require('cors');
 
+app.use(cors());
+app.use(express.urlencoded({extended:true}));
+
 
 app.listen(PORT, ()=> console.log(`listening on port ${PORT}`));
-
 
 
 const superagent = require('superagent');
@@ -23,8 +25,6 @@ app.get('/testing', (req, res) => {
   res.send('hiiiii');
 });
 
-app.use(cors());
-app.use(express.urlencoded({extended:true}));
 
 function createMusicSearch(request, response){
 
